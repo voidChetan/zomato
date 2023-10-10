@@ -52,19 +52,24 @@ export class SelectFoodComponent {
     })
   }
   addToCart(item: any) {
-    const obj = {
-      "customerId": this.custid,
-      "itemId": item.itemID,
-      "quantity": 1
-    }
-    this.master.addToCart(obj).subscribe((res:any)=>{
-      if(res.result) {
-        alert(res.message)
-        this.GetAllCartItemsByCustomerId();
-      } else {
-        alert(res.message)
+    if(this.custid ==0) {
+      this.router.navigateByUrl('Login')
+    } else {
+      const obj = {
+        "customerId": this.custid,
+        "itemId": item.itemID,
+        "quantity": 1
       }
-    })
+      this.master.addToCart(obj).subscribe((res:any)=>{
+        if(res.result) {
+          alert(res.message)
+          this.GetAllCartItemsByCustomerId();
+        } else {
+          alert(res.message)
+        }
+      })
+    }
+  
   }
   increaseQuantity(item: any) {
     item.quantity = item.quantity + 1; 

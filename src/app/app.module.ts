@@ -10,6 +10,7 @@ import { CreateOrderComponent } from './pages/create-order/create-order.componen
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SelectFoodComponent } from './pages/select-food/select-food.component';
+import { LayoutComponent } from './pages/layout/layout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { SelectFoodComponent } from './pages/select-food/select-food.component';
     CategoriesComponent,
     RestaurantItemsComponent,
     CreateOrderComponent,
-    SelectFoodComponent
+    SelectFoodComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
